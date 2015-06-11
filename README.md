@@ -4,7 +4,7 @@ A dockerfile for sshd on debian
 
 
 # build
-docker build -t jsanquer/debian-ssh:v1 .
+docker build -t jsanquer/debian-ssh
 
 
 # run
