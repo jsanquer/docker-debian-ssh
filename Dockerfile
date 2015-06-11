@@ -14,7 +14,7 @@ RUN apt-get install -y openssh-server \
  && chmod -R 700 /root/.ssh
 
 
-CMD echo $SSH_PUBKEY | base64 -d >/root/.ssh/authorized_keys && /usr/sbin/sshd && /bin/bash 
+CMD echo $SSH_KEY | base64 -d >/root/.ssh/authorized_keys && /usr/sbin/sshd && /bin/bash 
 
 EXPOSE 22
 
