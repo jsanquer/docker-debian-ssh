@@ -13,8 +13,9 @@ RUN apt-get install -y openssh-server \
  && chmod 700 /root/.ssh/authorized_keys \
  && chmod -R 700 /root/.ssh
 
+ENTRYPOINT echo $SSH_KEY | base64 -d >/root/.ssh/authorized_keys && /usr/sbin/sshd 
 
-CMD echo $SSH_KEY | base64 -d >/root/.ssh/authorized_keys && /usr/sbin/sshd && /bin/bash 
+CMD /bin/bash 
 
 EXPOSE 22
 
